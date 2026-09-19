@@ -23,8 +23,9 @@ jobs:
           pip install selenium webdriver-manager beautifulsoup4 gspread google-auth
 
       - name: 금고에서 secret.json 꺼내서 생성하기
-        run: |
-          echo "${{ secrets.GCP_SECRET_JSON }}" > secret.json
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_SECRET_JSON }}
+        run: echo "$GOOGLE_CREDENTIALS" > secret.json
 
       - name: 연금복권 파이썬 스크립트 실행!
         run: python pension_auto.py
