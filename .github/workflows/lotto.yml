@@ -2,7 +2,7 @@ name: Lotto Auto Scraper
 
 on:
   schedule:
-    - cron: '6 4 * * *' # 한국 시간 13:06 실행
+    - cron: '25 12 * * 6'  # 매주 토요일 21:25 KST
   workflow_dispatch:
 
 jobs:
