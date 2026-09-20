@@ -1,9 +1,7 @@
 name: Pension Auto Scraper
 
 on:
-  schedule:
-    - cron: '5 11 * * 4'   # 매주 목요일 20:05 KST
-  workflow_dispatch:
+  workflow_dispatch: # 외부(cron-job) 호출 및 수동 버튼 실행만 허용
 
 jobs:
   build:
