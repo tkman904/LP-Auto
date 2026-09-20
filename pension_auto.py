@@ -31,8 +31,8 @@ if __name__ == "__main__":
     # ----------------------------------------
     # 📝 구글 시트 URL 및 탭 이름을 세팅해주세요!
     # ----------------------------------------
-    PENSION_URL = "여기에_연금복권_시트_URL을_넣으세요"
-    PENSION_TAB_NAME = "시트1" 
+    PENSION_URL = "https://docs.google.com/spreadsheets/d/1SyDctyfajt1uVvQY9wQ_WaT2Ia3TwKOXWLZH2zFImjc/edit?gid=532635366#gid=532635366"
+    PENSION_TAB_NAME = "연금720+ 회차별 당첨번호" 
     # ----------------------------------------
 
     print("=========================================")
