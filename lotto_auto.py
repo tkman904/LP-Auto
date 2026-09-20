@@ -11,13 +11,18 @@ from selenium.webdriver.common.by import By
 
 def get_latest_lotto_round():
     """
-    1회차 추첨 시간(2002년 12월 7일 밤 9시 30분)을 기준으로 
-    현재 시점의 추첨 완료된 정확한 회차를 수학적으로 계산합니다.
+    1회차 추첨일(2002년 12월 7일)을 기준으로 
+    프로그램이 실행된 날짜(Date)를 이용해 회차를 단순 계산합니다.
     """
-    first_draw = datetime.datetime(2002, 12, 7, 21, 30)
-    now = datetime.datetime.now()
-    diff = now - first_draw
-    round_num = diff.days // 7 + 1
+    first_draw = datetime.date(2002, 12, 7)
+    
+    # 💡 깃허브 액션 스케줄러가 정확한 타이밍(시간/분)을 통제하므로,
+    # 파이썬은 실행 시점의 '날짜'만 기준으로 회차를 도출합니다.
+    # (+9시간을 더해 한국 날짜 기준으로 완벽히 보정)
+    korea_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+    today = korea_now.date()
+    
+    round_num = (today - first_draw).days // 7 + 1
     return round_num
 
 def update_google_sheet(sheet_url, sheet_name, data):
