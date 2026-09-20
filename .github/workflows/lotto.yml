@@ -2,8 +2,8 @@ name: Lotto Auto Scraper
 
 on:
   schedule:
-    - cron: '30 12 * * 6' # 한국 시간: 토요일 오후 9시 30분
-  workflow_dispatch: # 수동 실행 버튼 활성화
+    - cron: '6 4 * * *' # 한국 시간 13:06 실행
+  workflow_dispatch:
 
 jobs:
   build:
